@@ -3,15 +3,15 @@
     padding: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Bangers', cursive;
     background-color: #69A197;
     
     #container{
         width: 90%;
-        max-width: 1000px;
+        max-width: 1400px;
         margin: 20px auto;
         overflow: hidden;
-        background-color: #E9CE2C;
+        
         header{
             background: url(https://cdn.wallpapersafari.com/92/72/zJdLWB.jpg);
             height: 400px;
@@ -19,33 +19,68 @@
             align-items: center;
             display: flex;
             h1{
-                color: #f4f0f0;
-                font-size: 40px;
+                background-color: transparent;
+                color: yellow;
+                font-size: 70px;
                 font-weight: 400;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                bottom: 30px;
-            
+                text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
             }
          
         }
-        #joke-list{
-            color: #f4f0f0;
-            display: flex;}
-            flex-direction: column;
-            justify-content: flex-start;
-            align-items: flex-start;
+        main{
+            #joke-list{
+                h4{
+                    padding:10px 0;
+                    font-size: 20px;
+                    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+                }li{
+                    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+                    padding: 5px;
+    
+                }
+                color: #e0dcdc;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: flex-start;
+                padding: 50px;
+            }
+            #joke-box{
+                background-color: whitesmoke;
+                border: 4px solid black;
+                border-radius: 2px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-left: 120px;
+                margin-right: 120px;
+                max-width: 75%;
+                max-height: 200px;
+                height: 200px;
+            }
+            #generate{
+                display: flex;
+                background-color: whitesmoke;
+                margin: 25px 550px;
+                padding: 10px;
+                justify-content: center;
+                align-items: center;
+            }
         }
-        #joke-box{
-            background-color: whitesmoke;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            max-width: 80%;
-            max-height: 200px;
-            height: 200px;
+        footer{
+            padding-top: 350px;
+            background-color:#5e9289 ;
+            h5{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
     }
+
+}
 
 
