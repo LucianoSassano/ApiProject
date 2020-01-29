@@ -1,16 +1,30 @@
-var request = new XMLHttpRequest();
-request.open("GET", "https://official-joke-api.appspot.com/random_ten", true);
-request.onload = function() {
-  // Begin accessing JSON data here
-  var data = JSON.parse(this.response);
-  if (request.status >= 200 && request.status < 400) {
-    data.forEach(joke => {
-      console.log(joke.id);
-      console.log(joke.setup);
-      console.log(joke.punchline);
-    });
-  } else {
-    console.log("error");
+var randomJoke;
+
+function fetchJokeFromApi() {
+  async function getJokeApi() {
+    try {
+      config = {
+        method: "GET"
+      };
+      var response = await fetch(
+        "https://official-joke-api.appspot.com/random_joke",
+        config
+      );
+      var data = await response.json();
+
+      return data;
+    } catch (error) {
+      throw error;
+    }
   }
-};
-request.send();
+
+  getJokeApi()
+    .then(function(data) {
+      randomJoke = data;
+    })
+    .catch(function(e) {
+      console.error("We had a problem reaching the API!");
+      console.log(e);
+    });
+}
+fetchJokeFromApi();
