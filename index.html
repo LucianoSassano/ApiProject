@@ -11,11 +11,12 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="container">
+    <div id="container">
         <header>
             <h1>Fun-E</h1>
-            <h4>Joke Generator</h4>
-            <nav class="side-bar" id="top-jokes">
+        </header>
+        <main>
+            <nav class="side-bar" id="joke-list">
                 <h4>Today's top three!</h4>
                 <ul>
                     <li>Joke1</li>
@@ -23,9 +24,7 @@
                     <li>Joke3</li>
                 </ul>
             </nav>
-        </header>
-        <main>
-            <div class="joke-container">aqui se ecuentra el box donde se presentara el joke generado</div>
+            <div class="joke-container" id="joke-box">aqui se ecuentra el box donde se presentara el joke generado</div>
             <button class="joke-btn" id="generate">Generate Joke</button>
         </main> 
         <footer>
