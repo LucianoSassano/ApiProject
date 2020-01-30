@@ -8,38 +8,43 @@
       href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="main.js" />
     <script src="main.js"></script>
-    <title>Document</title>
+    <title>Fun-E: Joke Generator</title>
   </head>
   <body>
-    <div class="container">
+    <div id="container">
       <header>
-        <h1>Fun-E</h1>
-        <h4>Joke Generator</h4>
-        <nav class="side-bar" id="top-jokes">
-          <h4>Today's top three!</h4>
-          <ul>
-            <li value="0" id="topRated1">Joke1</li>
-            <li value="1" id="topRated2">Joke2</li>
-            <li value="2" id="topRated3">Joke3</li>
-
-          </ul>
-        </nav>
+        <h1>Joke Generator</h1>
       </header>
       <main>
-        <div id="setupRandom" class="joke-container">
-          aqui se ecuentra el box donde se presentara el setup generado
+        <nav class="side-bar" id="joke-list">
+          <h4>Today's top three!</h4>
+          <ul>
+            <li value="0"><a href="#joke-box">Joke N°1</a></li>
+            <li value="1"><a href="#joke-box">Joke N°2</a></li>
+            <li value="2"><a href="#joke-box">Joke N°3</a></li>
+          </ul>
+        </nav>
+        <div class="joke-container" id="joke-box"></div>
+        <div class="button-container" id="main-buttons">
+          <button class="rating-btn" id="like-btn">
+            <img src="img/bueno.png" alt="thumb up" />
+          </button>
+          <button class="joke-btn" id="generate">Generate Joke</button>
+          <button class="rating-btn" id="dislike-btn">
+            <img src="img/malo.png" alt="thummb down" />
+          </button>
         </div>
-        <div id="punchlineRandom" class="joke-container">
-          aqui se ecuentra el box donde se presentara el punchline generado
-        </div>
-
-        <button class="joke-btn" id="generate">Generate Joke</button>
       </main>
       <footer>
         <h5>Send us a joke!</h5>
-        <form action="">
+        <form action="" id="footer-form">
           <input
             type="email"
             name="email"
@@ -52,11 +57,9 @@
             id="joke-input"
             placeholder="Write your joke here!"
           />
-          <button id="upvoteButton" type="button">upvote</button>
-          <button id="downvoteButton" type="button">downvote</button>
-
+          <button type="button" id="joke-btn">Submit Joke</button>
         </form>
       </footer>
-    </divi>
+    </div>
   </body>
 </html>
