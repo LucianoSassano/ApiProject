@@ -1,41 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="main.js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Bangers&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="main.js" />
     <script src="main.js"></script>
-    <title>Document</title>
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>Fun-E</h1>
-            <h4>Joke Generator</h4>
-            <nav class="side-bar" id="top-jokes">
-                <h4>Today's top three!</h4>
-                <ul>
-                    <li>Joke1</li>
-                    <li>Joke2</li>
-                    <li>Joke3</li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <div class="joke-container">aqui se ecuentra el box donde se presentara el joke generado</div>
-            <button class="joke-btn" id="generate">Generate Joke</button>
-        </main> 
-        <footer>
-            <h5>Send us a joke!</h5>
-            <form action="">
-                <input type="email" name="email" id="email-input" placeholder="email adress">
-                <input type="text" name="joke" id="joke-input" placeholder="Write your joke here!">
-                <button type="submit">Submit Joke</button>
-            </form>
-        </footer>
+    <title>Fun-E</title>
+  </head>
+  <body>
+    <div id="container">
+      <header>
+        <h1>Joke Generator</h1>
+      </header>
+      <main>
+        <nav class="side-bar" id="joke-list">
+          <h4>Today's top three!</h4>
+          <ul>
+            <li><a href="#joke-box" onclick="">Joke N°1</a></li>
+            <li><a href="#joke-box" onclick="">Joke N°1</a></li>
+            <li><a href="#joke-box" onclick="">Joke N°1</a></li>
+          </ul>
+        </nav>
+        <div class="joke-container" id="joke-box"></div>
+        <div class="button-container" id="main-buttons">
+          <button class="rating-btn" id="like-btn">
+            <img src="img/bueno.png" alt="thumb up" />
+          </button>
+          <button class="joke-btn" id="generate">Generate Joke</button>
+          <button class="rating-btn" id="dislike-btn"><img src="img/malo.png" alt="thummb down" /></button>
+        </div>
+      </main>
+      <footer>
+        <h5>Send us a joke!</h5>
+        <form action="" id="footer-form">
+          <input
+            type="email"
+            name="email"
+            id="email-input"
+            placeholder="email adress"
+          />
+          <input
+            type="text"
+            name="joke"
+            id="joke-input"
+            placeholder="Write your joke here!"
+          />
+          <button type="button" id="joke-btn">Submit Joke</button>
+        </form>
+      </footer>
     </div>
-</body>
+  </body>
 </html>

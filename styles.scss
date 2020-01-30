@@ -1,16 +1,149 @@
-/**{
+*{
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Bangers', cursive;
+    background-color: #69A197;
     
-    .container{
+    #container{
         width: 90%;
-        max-width: 1000px;
+        max-width: 1400px;
         margin: 20px auto;
         overflow: hidden;
-        background-color: #1e1f26;
+        
+        header{
+            background: url(https://cdn.wallpapersafari.com/92/72/zJdLWB.jpg);
+            height: 400px;
+            justify-content: center;
+            align-items: center;
+            display: flex;
+            h1{
+                background-color: transparent;
+                color: yellow;
+                font-size: 70px;
+                font-weight: 400;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black;
+            }
+         
+        }
+        main{
+            #joke-list{
+                h4{
+                    padding:10px 0;
+                    font-size: 35px;
+                    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+                }li{
+                    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+                    padding: 5px;
+                    font-size: 25px;
+                    a{
+                        text-decoration: none;
+                    }
+                    a:hover{
+                        font-size: 105%;
+                        
+                    }
+                }
+                color: #e0dcdc;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 50px;
+            }
+            #joke-box{
+                background-color: whitesmoke;
+                border: 4px solid black;
+                border-radius: 2px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: auto 25% ;
+                margin-bottom: 30px;
+                max-width: 75%;
+                max-height: 200px;
+                height: 200px;
+            } 
+            #main-buttons{
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px 29%;
+                
+
+            }
+            .rating-btn{
+                margin: 50px;
+                img{
+                    background-color: transparent;
+                    height: 50px;
+                    display: inline-flex;
+                    padding: 5px;
+                }
+                img:hover{
+                    height: 51px;
+                }
+            }
+            
+            
+            #generate{
+                display: inline-flex;
+                background-color: whitesmoke;
+                margin: 25px auto;
+                padding: 15px;
+                height: 50px;
+                width: 150px;
+                justify-content: center;
+                align-items: center;
+            }
+            #generate:hover{
+                font-size: 101%;
+            }
+        }
+        footer{
+            width: 90%;
+            max-width: 1400px;
+            height: 500px;
+            margin: 200px auto 0 auto;
+            
+            background-color:#5e9289 ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            h5{
+                background-color: transparent;
+                color: yellow;
+                text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+                font-size: 50px;
+                flex-direction: row;
+                display: inline-flex;
+                justify-content: center;
+                align-items: center;
+                align-self: flex-start;
+                margin: 20px 50% 0;
+            }
+            #footer-form{
+                background-color: transparent;
+                height: 50px;
+                width: 90%;
+                max-width: 700px;
+                display: inline-flex;
+                margin-right: 50%;
+                #email-input{
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+               
+            }
+        }
     }
 
-}*/
+}
+
+
