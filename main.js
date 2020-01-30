@@ -45,9 +45,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.querySelector("#like-btn").addEventListener("click", upvoteJoke);
 
+
   document.querySelector("#dislike-btn").addEventListener("click", downvoteJoke);
 
   document.getElementById("footer-form").addEventListener("submit",sendJoke);
+
 });
 
 //Fetch from API and data manipulation when receiving the promise
@@ -88,7 +90,8 @@ function fetchJokeFromApi() {
       ) {
         var elem = {
           joke: randomJoke,
-          rating: 0
+          rating: Math.floor(Math.random() * 100),
+          voted: false
         };
         jokesRatings.push(elem);
         jokesRatings.sort(orderByRating);
@@ -134,7 +137,7 @@ function displayRandomJoke() {
 }
 
 function displayTopThree(event) {
-  var index = event.target.value;
+  var index = event.target.closest("li").value;
   displayingRandomJoke = jokesRatings[index].joke;
   document.querySelector("#setupRandom").textContent =
     displayingRandomJoke.setup;
@@ -161,7 +164,12 @@ function orderByRating(a, b) {
 
 function upvoteJoke() {
   jokesRatings.forEach(element => {
-    if (element.joke.id === displayingRandomJoke.id) element.rating++;
+    if (element.joke.id === displayingRandomJoke.id) {
+      if (element.voted == false) {
+        element.rating++;
+        element.voted = true;
+      } else alert("You have already voted this joke! Try next one");
+    }
   });
   jokesRatings.sort(orderByRating);
   displayRandomJoke();
@@ -169,7 +177,12 @@ function upvoteJoke() {
 
 function downvoteJoke() {
   jokesRatings.forEach(element => {
-    if (element.joke.id === displayingRandomJoke.id) element.rating--;
+    if (element.joke.id === displayingRandomJoke.id) {
+      if (element.voted == false) {
+        element.rating--;
+        element.voted = true;
+      } else alert("You have already voted this joke! Try next one");
+    }
   });
   jokesRatings.sort(orderByRating);
   displayRandomJoke();
