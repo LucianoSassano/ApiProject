@@ -77,7 +77,8 @@ function fetchJokeFromApi() {
       ) {
         var elem = {
           joke: randomJoke,
-          rating: Math.floor(Math.random() * 10)
+          rating: Math.floor(Math.random() * 100),
+          voted: false
         };
         jokesRatings.push(elem);
         jokesRatings.sort(orderByRating);
@@ -150,7 +151,12 @@ function orderByRating(a, b) {
 
 function upvoteJoke() {
   jokesRatings.forEach(element => {
-    if (element.joke.id === displayingRandomJoke.id) element.rating++;
+    if (element.joke.id === displayingRandomJoke.id) {
+      if (element.voted == false) {
+        element.rating++;
+        element.voted = true;
+      } else alert("You have already voted this joke! Try next one");
+    }
   });
   jokesRatings.sort(orderByRating);
   displayRandomJoke();
@@ -158,7 +164,12 @@ function upvoteJoke() {
 
 function downvoteJoke() {
   jokesRatings.forEach(element => {
-    if (element.joke.id === displayingRandomJoke.id) element.rating--;
+    if (element.joke.id === displayingRandomJoke.id) {
+      if (element.voted == false) {
+        element.rating--;
+        element.voted = true;
+      } else alert("You have already voted this joke! Try next one");
+    }
   });
   jokesRatings.sort(orderByRating);
   displayRandomJoke();
