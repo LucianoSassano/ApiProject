@@ -7,10 +7,10 @@ var jokesRatings = [];
 
 //User joke var and objects
 
-var userJoke = {
-  mailAdress:0,
-  jokeText: "",
-  rating:0,
+function UserJoke(email,jokeText,rating){
+  this.email = email;
+  this.jokeText = jokeText;
+  this.rating = rating;
 }
 
 var userJokes = [];
@@ -43,9 +43,9 @@ document.addEventListener("DOMContentLoaded", function() {
     .querySelector("#topRated3")
     .addEventListener("click", displayTopThree);
 
-  document.querySelector("#upvoteButton").addEventListener("click", upvoteJoke);
+  document.querySelector("#like-btn").addEventListener("click", upvoteJoke);
 
-  document.querySelector("#downvoteButton").addEventListener("click", downvoteJoke);
+  document.querySelector("#dislike-btn").addEventListener("click", downvoteJoke);
 
   document.getElementById("footer-form").addEventListener("submit",sendJoke);
 });
@@ -178,23 +178,14 @@ function downvoteJoke() {
 //User joke receive funtionality
 
 function sendJoke(event){
-  log("inicio");
-
   event.preventDefault();
-  console.log("dos");
-  
 
-  var userJoke;
   var mailAdress;
   var jokeText;
 
-  mailAdress = document.querySelector("email-input").value;
-  console.log("tres");
-  console.log(mailAdress);
-  jokeText = document.querySelector("joke-input").value;
-  console.log(jokeText);
-  userJoke.mailAdress = mailAdress;
-  userJoke.jokeText = jokeText;
+  mailAdress = document.getElementById("email-input").value;
+  jokeText = document.getElementById("joke-input").value;
+  var userJoke = new UserJoke(mailAdress,jokeText,0);
   userJokes.push(userJoke);
   event.target.reset();
   
