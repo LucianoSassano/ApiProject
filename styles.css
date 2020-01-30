@@ -1,18 +1,136 @@
-/**{
-    margin: 0;
-    padding: 0;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    font-family: 'Roboto', sans-serif;
-    
-    .container{
+* {
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  font-family: 'Bangers', cursive;
+  background-color: #69A197; }
+  * #container {
+    width: 90%;
+    max-width: 1400px;
+    margin: 20px auto;
+    overflow: hidden; }
+    * #container header {
+      background: url(https://cdn.wallpapersafari.com/92/72/zJdLWB.jpg);
+      height: 400px;
+      justify-content: center;
+      align-items: center;
+      display: flex; }
+      * #container header h1 {
+        background-color: transparent;
+        color: yellow;
+        font-size: 70px;
+        font-weight: 400;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-shadow: -4px 0 black, 0 4px black, 4px 0 black, 0 -4px black; }
+    * #container main #joke-list {
+      color: #e0dcdc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 50px; }
+      * #container main #joke-list h4 {
+        padding: 10px 0;
+        font-size: 35px;
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black; }
+      * #container main #joke-list li {
+        text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+        padding: 5px;
+        font-size: 25px; }
+        * #container main #joke-list li a {
+          text-decoration: none; }
+        * #container main #joke-list li a:hover {
+          font-size: 105%; }
+    * #container main #joke-box {
+      background-color: whitesmoke;
+      border: 4px solid black;
+      border-radius: 2px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto 25%;
+      margin-bottom: 30px;
+      max-width: 75%;
+      max-height: 200px;
+      height: 200px; }
+    * #container main #main-buttons {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      margin: 10px 29%; }
+    * #container main .rating-btn {
+      margin: 50px; }
+      * #container main .rating-btn img {
+        background-color: transparent;
+        height: 50px;
+        display: inline-flex;
+        padding: 5px; }
+      * #container main .rating-btn img:hover {
+        height: 51px; }
+    * #container main #generate {
+      display: inline-flex;
+      background-color: whitesmoke;
+      margin: 25px auto;
+      padding: 15px;
+      height: 50px;
+      width: 150px;
+      justify-content: center;
+      align-items: center; }
+    * #container main #generate:hover {
+      font-size: 101%; }
+    * #container footer {
+      width: 90%;
+      max-width: 1400px;
+      height: 500px;
+      margin: 200px auto 0 auto;
+      background-color: #5e9289; }
+      * #container footer h5 {
+        background-color: transparent;
+        color: yellow;
+        text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
+        font-size: 60px;
+        flex-direction: row;
+        display: inline-flex;
+        align-self: flex-start;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+        margin-inline-start: 29%; }
+      * #container footer #footer-form {
+        background-color: transparent;
+        height: 150px;
         width: 90%;
-        max-width: 1000px;
-        margin: 20px auto;
-        overflow: hidden;
-        background-color: #1e1f26;
-    }
-
-}*/
+        max-width: 700px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-inline-start: 10%; }
+        * #container footer #footer-form #email-input {
+          background-color: whitesmoke;
+          display: flex;
+          height: 50px;
+          margin: 10px;
+          width: 50%;
+          max-width: 350px;
+          padding: 5px; }
+        * #container footer #footer-form #joke-input {
+          background-color: whitesmoke;
+          display: flex;
+          height: 50px;
+          width: 50%;
+          max-width: 350px;
+          margin: 10px;
+          padding: 5px; }
+        * #container footer #footer-form #joke-btn {
+          width: 150px;
+          height: 60px;
+          margin: 15px;
+          display: flex;
+          justify-content: center;
+          flex-wrap: wrap;
+          background-color: whitesmoke; }
 
 /*# sourceMappingURL=styles.css.map */
