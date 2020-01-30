@@ -1,5 +1,4 @@
 *{
-    margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -109,35 +108,61 @@
             max-width: 1400px;
             height: 500px;
             margin: 200px auto 0 auto;
-            
             background-color:#5e9289 ;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             
             h5{
                 background-color: transparent;
                 color: yellow;
                 text-shadow: -1px 0 black, 0 2px black, 2px 0 black, 0 -1px black;
-                font-size: 50px;
+                font-size: 60px;
                 flex-direction: row;
                 display: inline-flex;
+                align-self: flex-start;
                 justify-content: center;
                 align-items: center;
-                align-self: flex-start;
-                margin: 20px 50% 0;
+                margin-top: 20px;
+                margin-inline-start: 29%;
+                
             }
             #footer-form{
                 background-color: transparent;
-                height: 50px;
+                height: 150px;
                 width: 90%;
                 max-width: 700px;
-                display: inline-flex;
-                margin-right: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-inline-start: 10%;
+            
                 #email-input{
-                    display: inline-flex;
+                    background-color: whitesmoke;
+                    display: flex;
+                    height: 50px;
+                    margin: 10px;
+                    width: 50%;
+                    max-width: 350px;
+                    padding: 5px;
+                    
+                }
+                #joke-input{
+                    background-color: whitesmoke;
+                    display: flex;
+                    height: 50px;
+                    width: 50%;
+                    max-width: 350px;
+                    margin: 10px;
+                    padding: 5px;
+
+                }
+                #joke-btn{
+                    width: 150px;
+                    height: 60px;
+                    margin: 15px;
+                    display:flex;
                     justify-content: center;
-                    align-items: center;
+                    flex-wrap: wrap;
+                    background-color: whitesmoke;
                 }
                
             }
