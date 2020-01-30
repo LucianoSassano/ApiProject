@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", function() {
     .querySelector("#topRated3")
     .addEventListener("click", displayTopThree);
 
-  document.querySelector("#upvoteButton").addEventListener("click", upvoteJoke);
+  document.querySelector("#like-btn").addEventListener("click", upvoteJoke);
   document
-    .querySelector("#downvoteButton")
+    .querySelector("#dislike-btn")
     .addEventListener("click", downvoteJoke);
 });
 
@@ -77,7 +77,7 @@ function fetchJokeFromApi() {
       ) {
         var elem = {
           joke: randomJoke,
-          rating: 0
+          rating: Math.floor(Math.random() * 10)
         };
         jokesRatings.push(elem);
         jokesRatings.sort(orderByRating);
@@ -123,7 +123,7 @@ function displayRandomJoke() {
 }
 
 function displayTopThree(event) {
-  var index = event.target.value;
+  var index = event.target.closest("li").value;
   displayingRandomJoke = jokesRatings[index].joke;
   document.querySelector("#setupRandom").textContent =
     displayingRandomJoke.setup;
