@@ -23,6 +23,16 @@ document.addEventListener("DOMContentLoaded", function() {
     .querySelector("#generate")
     .addEventListener("click", displayRandomJoke);
 
+  document
+    .querySelector("#topRated1")
+    .addEventListener("click", displayTopThree);
+  document
+    .querySelector("#topRated2")
+    .addEventListener("click", displayTopThree);
+  document
+    .querySelector("#topRated3")
+    .addEventListener("click", displayTopThree);
+
   document.querySelector("#upvoteButton").addEventListener("click", upvoteJoke);
   document
     .querySelector("#downvoteButton")
@@ -112,13 +122,13 @@ function displayRandomJoke() {
   document.querySelector("#punchlineRandom").textContent = randomJoke.punchline;
 }
 
-function displayTopThree() {
-  var topRated = document.querySelectorAll(".topRated");
-  topRated.forEach(function(element, index) {
-    element.children[0].textContent = jokesRatings[index].joke.setup;
-    element.children[1].textContent = jokesRatings[index].joke.punchline;
-    element.children[2].textContent = "Score: " + jokesRatings[index].rating;
-  });
+function displayTopThree(event) {
+  var index = event.target.value;
+  displayingRandomJoke = jokesRatings[index].joke;
+  document.querySelector("#setupRandom").textContent =
+    displayingRandomJoke.setup;
+  document.querySelector("#punchlineRandom").textContent =
+    displayingRandomJoke.punchline;
 }
 
 // jokesRatings order Comparator callback for sort function
