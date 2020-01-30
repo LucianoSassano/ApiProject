@@ -1,41 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="main.js">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <script src="main.js"></script>
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>Fun-E</h1>
-            <h4>Joke Generator</h4>
-            <nav class="side-bar" id="top-jokes">
-                <h4>Today's top three!</h4>
-                <ul>
-                    <li>Joke1</li>
-                    <li>Joke2</li>
-                    <li>Joke3</li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <div class="joke-container">aqui se ecuentra el box donde se presentara el joke generado</div>
-            <button class="joke-btn" id="generate">Generate Joke</button>
-        </main> 
-        <footer>
-            <h5>Send us a joke!</h5>
-            <form action="">
-                <input type="email" name="email" id="email-input" placeholder="email adress">
-                <input type="text" name="joke" id="joke-input" placeholder="Write your joke here!">
-                <button type="submit">Submit Joke</button>
-            </form>
-        </footer>
-    </div>
-</body>
+      <header>
+        <h1>Fun-E</h1>
+        <h4>Joke Generator</h4>
+        <nav class="side-bar" id="top-jokes">
+          <h4>Today's top three!</h4>
+          <ul>
+            <li class="topRated">Joke1: <div >1</div><div >1</div><div >1</div></li>
+            <li class="topRated">Joke2: <div >2</div><div >2</div><div >2</div></li>
+            <li class="topRated">Joke3: <div >3</div><div >3</div><div >3</div></li>
+
+          </ul>
+        </nav>
+      </header>
+      <main>
+        <div id="setupRandom" class="joke-container">
+          aqui se ecuentra el box donde se presentara el setup generado
+        </div>
+        <div id="punchlineRandom" class="joke-container">
+          aqui se ecuentra el box donde se presentara el punchline generado
+        </div>
+
+        <button class="joke-btn" id="generate">Generate Joke</button>
+      </main>
+      <footer>
+        <h5>Send us a joke!</h5>
+        <form action="">
+          <input
+            type="email"
+            name="email"
+            id="email-input"
+            placeholder="email adress"
+          />
+          <input
+            type="text"
+            name="joke"
+            id="joke-input"
+            placeholder="Write your joke here!"
+          />
+          <button id="upvoteButton" type="button">upvote</button>
+          <button id="downvoteButton" type="button">downvote</button>
+
+        </form>
+      </footer>
+    </divi>
+  </body>
 </html>
