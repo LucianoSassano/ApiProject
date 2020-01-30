@@ -50,11 +50,23 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      flex-direction: column;
       margin: auto 25%;
       margin-bottom: 30px;
       max-width: 75%;
       max-height: 200px;
       height: 200px; }
+      * #container main #joke-box #setupRandom {
+        background-color: transparent;
+        display: flex;
+        font-size: 20px;
+        margin: 10px; }
+      * #container main #joke-box #punchlineRandom {
+        display: flex;
+        background-color: transparent;
+        font-size: 20px;
+        margin: 10px;
+        color: chocolate; }
     * #container main #main-buttons {
       display: inline-flex;
       justify-content: center;
@@ -72,9 +84,10 @@
     * #container main #generate {
       display: inline-flex;
       background-color: whitesmoke;
+      font-size: 35px;
       margin: 25px auto;
       padding: 15px;
-      height: 50px;
+      height: 60px;
       width: 150px;
       justify-content: center;
       align-items: center; }
