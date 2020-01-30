@@ -5,6 +5,16 @@ var displayingRandomJoke;
 var jokes = [];
 var jokesRatings = [];
 
+//User joke var and objects
+
+var userJoke = {
+  mailAdress:0,
+  jokeText: "",
+  rating:0,
+}
+
+var userJokes = [];
+
 //DOMContentLoaded
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -34,9 +44,10 @@ document.addEventListener("DOMContentLoaded", function() {
     .addEventListener("click", displayTopThree);
 
   document.querySelector("#upvoteButton").addEventListener("click", upvoteJoke);
-  document
-    .querySelector("#downvoteButton")
-    .addEventListener("click", downvoteJoke);
+
+  document.querySelector("#downvoteButton").addEventListener("click", downvoteJoke);
+
+  document.getElementById("footer-form").addEventListener("submit",sendJoke);
 });
 
 //Fetch from API and data manipulation when receiving the promise
@@ -162,4 +173,29 @@ function downvoteJoke() {
   });
   jokesRatings.sort(orderByRating);
   displayRandomJoke();
+}
+
+//User joke receive funtionality
+
+function sendJoke(event){
+  log("inicio");
+
+  event.preventDefault();
+  console.log("dos");
+  
+
+  var userJoke;
+  var mailAdress;
+  var jokeText;
+
+  mailAdress = document.querySelector("email-input").value;
+  console.log("tres");
+  console.log(mailAdress);
+  jokeText = document.querySelector("joke-input").value;
+  console.log(jokeText);
+  userJoke.mailAdress = mailAdress;
+  userJoke.jokeText = jokeText;
+  userJokes.push(userJoke);
+  event.target.reset();
+  
 }
