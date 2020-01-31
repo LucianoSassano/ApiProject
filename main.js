@@ -7,7 +7,7 @@ var jokesRatings = [];
 
 //User joke var and objects
 
-function UserJoke(email,jokeText,rating){
+function UserJoke(email, jokeText, rating) {
   this.email = email;
   this.jokeText = jokeText;
   this.rating = rating;
@@ -45,11 +45,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.querySelector("#like-btn").addEventListener("click", upvoteJoke);
 
+  document
+    .querySelector("#dislike-btn")
+    .addEventListener("click", downvoteJoke);
 
-  document.querySelector("#dislike-btn").addEventListener("click", downvoteJoke);
-
-  document.getElementById("footer-form").addEventListener("submit",sendJoke);
-
+  document.getElementById("footer-form").addEventListener("submit", sendJoke);
 });
 
 //Fetch from API and data manipulation when receiving the promise
@@ -97,6 +97,10 @@ function fetchJokeFromApi() {
         jokesRatings.sort(orderByRating);
         writeJokesRatingsLocalStorage();
       }
+      document.querySelector("#generate").disabled = false;
+      document.querySelector("#like-btn").disabled = false;
+      document.querySelector("#dislike-btn").disabled = false;
+      document.querySelector("#generate").textContent = "HIT ME!";
     })
     .catch(function(e) {
       console.error("We had a problem reaching the API!");
@@ -130,6 +134,8 @@ function readJokesRatingsLocalStorage() {
 // Display Functions
 
 function displayRandomJoke() {
+  document.querySelector("#generate").textContent = "Loading...";
+  document.querySelector("#generate").disabled = true;
   displayingRandomJoke = randomJoke;
   fetchJokeFromApi();
   document.querySelector("#setupRandom").textContent = randomJoke.setup;
@@ -163,6 +169,7 @@ function orderByRating(a, b) {
 // Upvote and downvote Functions
 
 function upvoteJoke() {
+  document.querySelector("#like-btn").disabled = true;
   jokesRatings.forEach(element => {
     if (element.joke.id === displayingRandomJoke.id) {
       if (element.voted == false) {
@@ -176,6 +183,7 @@ function upvoteJoke() {
 }
 
 function downvoteJoke() {
+  document.querySelector("#dislike-btn").disabled = true;
   jokesRatings.forEach(element => {
     if (element.joke.id === displayingRandomJoke.id) {
       if (element.voted == false) {
@@ -190,7 +198,7 @@ function downvoteJoke() {
 
 //User joke receive funtionality
 
-function sendJoke(event){
+function sendJoke(event) {
   event.preventDefault();
 
   var mailAdress;
@@ -198,8 +206,7 @@ function sendJoke(event){
 
   mailAdress = document.getElementById("email-input").value;
   jokeText = document.getElementById("joke-input").value;
-  var userJoke = new UserJoke(mailAdress,jokeText,0);
+  var userJoke = new UserJoke(mailAdress, jokeText, 0);
   userJokes.push(userJoke);
   event.target.reset();
-  
 }
