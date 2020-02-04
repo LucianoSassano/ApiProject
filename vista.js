@@ -75,21 +75,13 @@ class Vista {
   }
   // Upvote and downvote Functions
 
-     upvoteJoke() {
+    upvoteJoke() {
     document.querySelector("#like-btn").disabled = true;
-    jokesRatings.forEach(element => {
-      if (element.joke.id === displayingRandomJoke.id) {
-        if (element.voted == false) {
-          element.rating++;
-          element.voted = true;
-        } else alert("You have already voted this joke! Try next one");
-      }
-    });
-    jokesRatings.sort(orderByRating);
+    this.controlador.votoPositivo();
     displayRandomJoke();
   }
   
-   downvoteJoke() {
+    downvoteJoke() {
     document.querySelector("#dislike-btn").disabled = true;
     jokesRatings.forEach(element => {
       if (element.joke.id === displayingRandomJoke.id) {

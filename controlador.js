@@ -6,21 +6,14 @@ class Controlador {
         this.modelo.agregarUserJoke(joke);
 
     }
-
-    // jokesRatings order Comparator callback for sort function
-    
-    orderByRating(a, b) {
-    const rating1 = a.rating;
-    const rating2 = b.rating;
-  
-    let comparison = 0;
-    if (rating1 < rating2) {
-      comparison = 1;
-    } else if (rating1 > rating2) {
-      comparison = -1;
+    ordernarPorRating(joke,joke){
+        this.modelo.ordernarPorRating(joke,joke);
     }
-    return comparison;
-  }
+    votoPositivo(){
+        this.modelo.votoPositivo();
+    }
+    
+  
 }
 
 export default Controlador

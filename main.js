@@ -1,8 +1,11 @@
 
+
 const modelo = new Modelo;
 const vista = new Vista(controlador);
 const controlador = new Controlador(modelo);
 
+
+//Fetch from API and data manipulation when receiving the promise
 
 function fetchJokeFromApi() {
   async function getJokeApi() {
@@ -59,23 +62,6 @@ function fetchJokeFromApi() {
 
   return randomJoke;
 }
-
-// Upvote and downvote Functions
-
-function upvoteJoke() {
-  document.querySelector("#like-btn").disabled = true;
-  jokesRatings.forEach(element => {
-    if (element.joke.id === displayingRandomJoke.id) {
-      if (element.voted == false) {
-        element.rating++;
-        element.voted = true;
-      } else alert("You have already voted this joke! Try next one");
-    }
-  });
-  jokesRatings.sort(orderByRating);
-  displayRandomJoke();
-}
-
 
 
 
