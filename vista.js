@@ -7,11 +7,9 @@ class Vista {
     //DOMContentLoaded
 
     document.addEventListener("DOMContentLoaded", function() {
-      vista.fetchJokeFromApi(); // To make sure it doesn't start empty
-
       controlador.requireJokesArray();
       controlador.requireJokesRatingsArray();
-
+      vista.fetchJokeFromApi(); // To make sure it doesn't start empty
       document
         .querySelector("#generate")
         .addEventListener("click", vista.displayRandomJoke);
@@ -64,7 +62,6 @@ class Vista {
       })
       .catch(function(e) {
         console.error("We had a problem reaching the API!");
-        console.log(e);
       });
   }
 

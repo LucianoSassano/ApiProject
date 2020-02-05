@@ -17,13 +17,14 @@ class Modelo {
   //Local Storage Functions
 
   writeJokesLocalStorage() {
-    var jsonJokes = JSON.stringify(modelo.jokes);
+    var jsonJokes = JSON.stringify(this.jokes);
     localStorage.setItem("jokes", jsonJokes);
   }
 
   readJokesLocalStorage() {
     var jsonJokes = localStorage.getItem("jokes");
     var aux = JSON.parse(jsonJokes);
+
     if (aux != null) {
       this.jokes = aux;
     }
@@ -37,7 +38,7 @@ class Modelo {
     var jsonJokes = localStorage.getItem("jokesRatings");
     var aux = JSON.parse(jsonJokes);
     if (aux != null) {
-      this.jokes = aux;
+      this.jokesRatings = aux;
     }
   }
   addRandomJokeToArrayM() {
