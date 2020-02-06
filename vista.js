@@ -48,13 +48,13 @@ class Vista {
         config = {
           method: "GET"
         };
-  
+
         var response = await fetch(
           "https://official-joke-api.appspot.com/jokes/random",
           config
         );
         var data = await response.json();
-  
+
         return data;
       } catch (error) {
         throw error;
@@ -94,10 +94,9 @@ class Vista {
         console.error("We had a problem reaching the API!");
         console.log(e);
       });
-  
+
     return randomJoke;
   }
-
 
   displayRandomJoke() {
     document.querySelector("#generate").textContent = "Loading...";

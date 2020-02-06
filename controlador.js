@@ -1,19 +1,31 @@
 class Controlador {
-    constructor( modelo ){
-        this.modelo = modelo;
-    }
-    agregarUserJoke(joke){
-        this.modelo.agregarUserJoke(joke);
+  constructor(modelo) {
+    this.modelo = modelo;
+  }
 
-    }
-    ordernarPorRating(joke1,joke2){
-        this.modelo.ordernarPorRating(joke1,joke2);
-    }
-    votoPositivo(){
-        this.modelo.votoPositivo();
-    }
-    
+  addUserJoke(joke) {
+    this.modelo.addUserJoke(joke);
+  }
+
+  addRandomJoke(joke) {
+    this.modelo.addRandomJoke(joke);
+  }
+
+  getRandomJoke() {
+    return this.modelo.randomJoke;
+  }
+
+  ordernarPorRating(joke1, joke2) {
+    this.modelo.ordernarPorRating(joke1, joke2);
+  }
+
+  positiveVote() {
+    this.modelo.positiveVote();
+  }
   
+  negativeVote(){
+      this.modelo.negativeVote();
+  }
 }
 
-export default Controlador
+export default Controlador;

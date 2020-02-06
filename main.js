@@ -8,5 +8,6 @@ const vista = new Vista(controlador);
 
 
 
+console.log(modelo.userJokes);
 
 
