@@ -1,4 +1,4 @@
-import Controlador from "./controlador";
+import Controlador from "./controlador.js";
 
 class Vista {
   constructor(controlador) {
