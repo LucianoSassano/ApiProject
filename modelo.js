@@ -7,9 +7,45 @@ class Modelo {
     this.userJokes = [];
   }
 
+  assignRandomJoke(joke) {
+    this.displayingRandomJoke = this.randomJoke;
+    this.randomJoke = this.joke;
+  }
+
+  addRandomJokeToArray() {
+    if (
+      this.jokes.find(element => {
+        return element.id == this.jokes.id;
+      }) == undefined
+    ) {
+      this.jokes.push(this.randomJoke);
+      this.writeJokesLocalStorage();
+    }
+  }
+
+  addJokeRatingToArray(){
+    if(
+      this.jokesRatings.find((element) =>{
+        element.joke.id == Modelo.randomJoke.id
+
+      }) == undefined) {
+        let ranJoke = {
+          joke = this.randomJoke,
+          rating = Math.floor(Math.random()*100),
+          voted = false,
+        }
+          this.jokesRatings.push(element);
+          this.jokesRatings.sort(this.orderByRating);
+          this.writeJokesRatingsLocalStorage();
+      }
+
+  }
+
   agregarUserJoke(joke) {
     this.userJokes.push(joke);
   }
+
+  //Local Storage managment
 
   writeJokesLocalStorage() {
     this.jsonJokes = JSON.stringify(jokes);
@@ -18,7 +54,10 @@ class Modelo {
 
   readJokesLocalStorage() {
     this.jsonJokes = localStorage.getItem("jokes");
-    return JSON.parse(jsonJokes);
+    let aux = JSON.parse(this.jsonJokes);
+    if (aux != null) {
+      this.jokes = aux;
+    }
   }
   writeJokesRatingsLocalStorage() {
     this.jsonJokesRatings = JSON.stringify(jokesRatings);
@@ -27,68 +66,11 @@ class Modelo {
 
   readJokesRatingsLocalStorage() {
     this.jsonJokesRatings = localStorage.getItem("jokesRatings");
-    return JSON.parse(jsonJokesRatings);
-  }
-  fetchJokeFromApi() {
-  async function getJokeApi() {
-    try {
-      config = {
-        method: "GET"
-      };
-
-      var response = await fetch(
-        "https://official-joke-api.appspot.com/jokes/random",
-        config
-      );
-      var data = await response.json();
-
-      return data;
-    } catch (error) {
-      throw error;
+    let aux = JSON.parse(this.jsonJokes);
+    if (aux != null) {
+      this.jokesRatings = aux;
     }
   }
-  getJokeApi()
-    .then(function(data) {
-      randomJoke = data;
-      if (
-        jokes.find(function(element) {
-          return element.id == randomJoke.id;
-        }) == undefined
-      ) {
-        jokes.push(randomJoke);
-        writeJokesLocalStorage();
-      }
-      if (
-        jokesRatings.find(function(element) {
-          return element.joke.id == randomJoke.id;
-        }) == undefined
-      ) {
-        var elem = {
-          joke: randomJoke,
-          rating: Math.floor(Math.random() * 100),
-          voted: false
-        };
-        jokesRatings.push(elem);
-        jokesRatings.sort(orderByRating);
-        writeJokesRatingsLocalStorage();
-      }
-      document.querySelector("#generate").disabled = false;
-      document.querySelector("#like-btn").disabled = false;
-      document.querySelector("#dislike-btn").disabled = false;
-      document.querySelector("#generate").textContent = "HIT ME!";
-    })
-    .catch(function(e) {
-      console.error("We had a problem reaching the API!");
-      console.log(e);
-    });
-
-  return randomJoke;
-}
-
-
-
-
-
 
   orderByRating(a, b) {
     this.rating1 = a.rating;
@@ -102,29 +84,26 @@ class Modelo {
     }
     return comparison;
   }
-  votoPositivo(){
-    var votado ;
+
+  positiveVote() {
+    var msg = "You have already voted this joke! Try next one";
     this.jokesRatings.forEach(element => {
-      if (element.joke.id === displayingRandomJoke.id) {
+      if (element.joke.id === this.displayingRandomJoke.id) {
         if (element.voted == false) {
-          element.rating++;
+          element.rating--;
           element.voted = true;
-          return votado = true
-        }if(element.voted == true){
-            return votado = true;
+          msg = "Succesful vote!";
         }
       }
     });
-    jokesRatings.sort(orderByRating);
-  }
+    this.jokesRatings.sort(orderByRating);
+    return msg;
 }
 
-class UserJoke {
-  constructor(email, jokeText, rating) {
-    this.email = email;
-    this.jokeText = jokeText;
-    this.rating = rating;
-  }
+function UserJoke(email, jokeText, rating) {
+  this.email = email;
+  this.jokeText = jokeText;
+  this.rating = rating;
 }
 
 export default Modelo;
