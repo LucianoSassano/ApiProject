@@ -99,18 +99,17 @@ class Modelo {
     return msg;
   }
 
-  negativeVote(){
+  negativeVote() {
     var msg = "You allready voted this one!";
     this.jokesRatings.forEach(element => {
-      if(element.id === this.displayingRandomJoke.id){
-        if(element.voted == false){
+      if (element.id === this.displayingRandomJoke.id) {
+        if (element.voted == false) {
           element.rating--;
           element.voted = false;
-          msg = "Vote submited"
-
+          msg = "Vote submited";
         }
       }
-    })
+    });
     this.jokesRatings.sort(this.orderByRating);
     return msg;
   }

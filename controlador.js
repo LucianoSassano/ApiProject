@@ -7,24 +7,24 @@ class Controlador {
     this.modelo.addUserJoke(joke);
   }
 
-  addRandomJoke(joke) {
-    this.modelo.addRandomJoke(joke);
+  assignRandomJoke(joke) {
+    this.modelo.assignRandomJoke(joke);
   }
 
   getRandomJoke() {
     return this.modelo.randomJoke;
   }
 
-  ordernarPorRating(joke1, joke2) {
+  orderByRating(joke1, joke2) {
     this.modelo.ordernarPorRating(joke1, joke2);
   }
 
   positiveVote() {
     this.modelo.positiveVote();
   }
-  
-  negativeVote(){
-      this.modelo.negativeVote();
+
+  negativeVote() {
+    this.modelo.negativeVote();
   }
 }
 
